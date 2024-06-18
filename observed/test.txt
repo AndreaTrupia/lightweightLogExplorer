@@ -1,1 +1,1027 @@
-TEST
+[2024-06-04 13:42:13 +0000] [9] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 1
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 300
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app/src
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /var/log/rao/gu-access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /var/log/rao/gu-error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags:
+  statsd_prefix:
+  proc_name: None
+  default_proc_name: rao.wsgi
+  pythonpath: /app/src
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f4ef6951c10>
+  on_reload: <function OnReload.on_reload at 0x7f4ef6951d30>
+  when_ready: <function WhenReady.when_ready at 0x7f4ef6951e50>
+  pre_fork: <function Prefork.pre_fork at 0x7f4ef6951f70>
+  post_fork: <function Postfork.post_fork at 0x7f4ef69f70d0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f4ef69f71f0>
+  worker_int: <function WorkerInt.worker_int at 0x7f4ef69f7310>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f4ef69f7430>
+  pre_exec: <function PreExec.pre_exec at 0x7f4ef69f7550>
+  pre_request: <function PreRequest.pre_request at 0x7f4ef69f7670>
+  post_request: <function PostRequest.post_request at 0x7f4ef69f7700>
+  child_exit: <function ChildExit.child_exit at 0x7f4ef69f7820>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f4ef69f7940>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f4ef69f7a60>
+  on_exit: <function OnExit.on_exit at 0x7f4ef69f7b80>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-06-04 13:42:13 +0000] [9] [INFO] Starting gunicorn 20.0.4
+[2024-06-04 13:42:13 +0000] [9] [DEBUG] Arbiter booted
+[2024-06-04 13:42:13 +0000] [9] [INFO] Listening at: http://0.0.0.0:8000 (9)
+[2024-06-04 13:42:13 +0000] [9] [INFO] Using worker: sync
+[2024-06-04 13:42:13 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-06-04 13:42:13 +0000] [9] [DEBUG] 1 workers
+[2024-06-04 16:01:55 +0200] [11] [DEBUG] GET /
+[2024-06-04 16:02:05 +0200] [11] [DEBUG] POST /
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:05] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/auth/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:07] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/auth/:
+[status code = 200
+content = {"status": true, "value": {"code": 0, "spidCode": "EHT24CBDGSWZV"}}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:07] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/attributes/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 16:02:09 +0200] [11] [DEBUG] GET /level2_token_choice/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:09] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/tokens/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:14] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/tokens/:
+[status code = 200
+content = {"status": true, "value": {"sms": "EHT24CBDGSWZV240711205"}}]
+[2024-06-04 16:02:16 +0200] [11] [DEBUG] GET /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:16] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/send/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:18] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/send/:
+[status code = 200
+content = {"status": true, "value": 94}]
+[2024-06-04 16:02:28 +0200] [11] [DEBUG] GET /
+[2024-06-04 16:02:37 +0200] [11] [DEBUG] GET /portal/
+[2024-06-04 16:02:37 +0200] [11] [DEBUG] GET /
+[2024-06-04 16:02:45 +0200] [11] [DEBUG] POST /
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:45] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/auth/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:46] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/auth/:
+[status code = 200
+content = {"status": true, "value": {"code": 0, "spidCode": "EHT24CBDGSWZV"}}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:46] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/attributes/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 16:02:46 +0200] [11] [DEBUG] GET /level2_token_choice/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:46] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/tokens/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:02:49] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/tokens/:
+[status code = 200
+content = {"status": true, "value": {"sms": "EHT24CBDGSWZV240711205"}}]
+[2024-06-04 16:02:50 +0200] [11] [DEBUG] GET /level2_otp/sms/
+[2024-06-04 16:03:01 +0200] [11] [DEBUG] POST /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:03:01] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/check/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:03:04] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/check/:
+[status code = 200
+content = {"status": true, "value": true, "wrongOtp": false}]
+[2024-06-04 16:03:05 +0200] [11] [DEBUG] GET /add_identity/
+[2024-06-04 16:03:05 +0200] [11] [DEBUG] GET /router_view/DataToSend/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:03:05 +0200] [11] [DEBUG] GET /data_to_send/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:03:05] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[2024-06-04 16:03:06 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:06 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:19 +0200] [11] [DEBUG] GET /ajax_decode_fiscal_number/
+[2024-06-04 16:03:37 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:40 +0200] [11] [DEBUG] POST /data_to_send/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:03:40] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[2024-06-04 16:03:41 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:41 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:41 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:41 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:41 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:41 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 16:03:46 +0200] [11] [DEBUG] POST /data_to_send/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:03:46] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:03:47] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a EmailToVerify tramite NEXT per il cittadino [CF non inizializzato]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:03:47] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/check/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:03:48] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/check/order:
+[status code = 200
+content = {"message":"Saldo Disponibile","status":"success"}
+]
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:03:48] INFO [next] [agency.states.DataToSend:50] operator: DLRLSN04E29G273U, GHONHD18E01Z505E - Step1 identificazione OK - Form compilato
+[2024-06-04 16:03:48 +0200] [11] [DEBUG] GET /router_view/EmailToVerify/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:03:48 +0200] [11] [DEBUG] GET /verify_mail/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:04:04 +0200] [11] [DEBUG] POST /verify_mail/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:04:04] INFO [devisu_verify_mail] [agency.etnaid.EtnaIDAPI:251] Check email user@order50124.it esistente
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:04:04] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/mail.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:04:05] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/mail:
+[status code = 200
+content = {"message": "Email ok! Non appartiene a nessuna identit\u00e0"}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:04:05] INFO [send_email] [agency.utils.utils_mail:75] [['user@order50124.it']] Mail con oggetto "Codice di verifica e-mail da Dev" inviata - Connection: default
+[2024-06-04 16:05:43 +0200] [11] [DEBUG] POST /verify_mail/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:05:43] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a PhoneToVerify tramite NEXT per il cittadino GHONHD18E01Z505E
+[2024-06-04 16:05:43 +0200] [11] [DEBUG] GET /router_view/PhoneToVerify/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:05:43 +0200] [11] [DEBUG] GET /verify_phone/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:05:48 +0200] [11] [DEBUG] POST /verify_phone/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:05:48] INFO [devisu_verify_phone] [agency.etnaid.EtnaIDAPI:274] Invio del OTP SMS a +39345345
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:05:48] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/otp/sms.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:05:49] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/otp/sms:
+[status code = 200
+content = {"message": "OTP sms inviato con successo"}]
+[2024-06-04 16:05:59 +0200] [11] [DEBUG] POST /verify_phone/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:05:59] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a IdModeChoice tramite NEXT per il cittadino GHONHD18E01Z505E
+[2024-06-04 16:05:59 +0200] [11] [DEBUG] GET /router_view/IdModeChoice/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:05:59 +0200] [11] [DEBUG] GET /id_mode_choice/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:06:01 +0200] [11] [DEBUG] POST /id_mode_choice/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:06:01] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a UploadDoc tramite NEXT per il cittadino GHONHD18E01Z505E
+[2024-06-04 16:06:01 +0200] [11] [DEBUG] GET /router_view/UploadDoc/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:06:01 +0200] [11] [DEBUG] GET /upload_doc/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:06:34 +0200] [11] [DEBUG] POST /upload_doc/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:06:34] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a WebcamIdentification tramite NEXT per il cittadino GHONHD18E01Z505E
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:06:34] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/pay/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:06:36] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/pay/order:
+[status code = 200
+content = {"message":"Saldo Scalato con Successo","status":"success"}
+]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:06:36] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/.well-known/rao-configuration/certs.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:06:36] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/.well-known/rao-configuration/certs:
+[status code = 200
+content = {"keys": [{"e": "AQAB", "kty": "RSA", "n": "p8p7IwvTtwgphraRdyLJNh9UbFCz_Td0iMiOn9YQH85AmUu3pq3NVWz2V1rHUjSgpFuLeAr4omj2AtB_2jOjkvtBGhMD7Pqf_G1dyjhDOnzBUGBbSCtkhhjPlh2oc0mX3HI5Bb7viNsel32Rjp5R5MWCGvkM0748HWnfKf9W4_xmQTHOp1Zvz2WuX_bObkwcrwaXqnyMs4wGCc1ibzKCGnRKSWP6doQIiEtoYLZrUeUMcJezMoN7vN6enHNc4vIedBdbU95hH5XSy2YtLUCHhvm_uZPOTvHZWXhD6Vw-iSRQBN8HGmoaq67dctuCvA4lwekqW1MdBKZpLgncChnUEXAkQUsklqJN0pOXdbfozgZO2xaHG9y5mfzx8OiUdkMFQquTsQ8lO3pTsYIdWgEijS--PxfH_u1vNM2bB3wKMR7ZWA9CIbwza5HX4Ej1mHBFR3PMDb5eoUq-FWzALnzGmKPgcbdUi8xcp7wyldho71cbghUY6bFOBwqcknoJgAiLeNEWFEeWXyk2pvxGEHYQ1ePb1yeYW3uvuHOd-BSNOwZc7AW9Qj8oISUZtPt_esjP_pbQ-7xGSt-OiSF3WD27hMVrG4Eri0x09QWpvF9bSDWT-z3dbHpp92VfwrLMOgvnSBG9VDBcO8LsSMOAAlgopT82-ZRci4-psw_3UWysrOk"}]}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:06:36] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/decrypt_request.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 14:11:34 +0000] [9] [CRITICAL] WORKER TIMEOUT (pid:11)
+[2024-06-04 16:11:34 +0200] [11] [INFO] Worker exiting (pid: 11)
+[2024-06-04 14:11:34 +0000] [13] [INFO] Booting worker with pid: 13
+[2024-06-04 16:11:35 +0200] [13] [DEBUG] GET /.well-known/rao-configuration/certs
+[2024-06-04 16:11:37 +0200] [13] [DEBUG] Ignoring EPIPE
+[2024-06-04 16:14:05 +0200] [13] [DEBUG] GET /.well-known/rao-configuration/certs
+[2024-06-04 16:14:11 +0200] [13] [DEBUG] GET /.well-known/rao-configuration/certs
+[2024-06-04 16:14:15 +0200] [13] [DEBUG] POST /upload_doc/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:14:15] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a WebcamIdentification tramite NEXT per il cittadino GHONHD18E01Z505E
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:14:15] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/pay/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:14:17] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/pay/order:
+[status code = 200
+content = {"message":"Attenzione! Ordine gi\u00e0 Pagato","status":"success"}
+]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:14:17] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/.well-known/rao-configuration/certs.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:14:17] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/.well-known/rao-configuration/certs:
+[status code = 200
+content = {"keys": [{"e": "AQAB", "kty": "RSA", "n": "p8p7IwvTtwgphraRdyLJNh9UbFCz_Td0iMiOn9YQH85AmUu3pq3NVWz2V1rHUjSgpFuLeAr4omj2AtB_2jOjkvtBGhMD7Pqf_G1dyjhDOnzBUGBbSCtkhhjPlh2oc0mX3HI5Bb7viNsel32Rjp5R5MWCGvkM0748HWnfKf9W4_xmQTHOp1Zvz2WuX_bObkwcrwaXqnyMs4wGCc1ibzKCGnRKSWP6doQIiEtoYLZrUeUMcJezMoN7vN6enHNc4vIedBdbU95hH5XSy2YtLUCHhvm_uZPOTvHZWXhD6Vw-iSRQBN8HGmoaq67dctuCvA4lwekqW1MdBKZpLgncChnUEXAkQUsklqJN0pOXdbfozgZO2xaHG9y5mfzx8OiUdkMFQquTsQ8lO3pTsYIdWgEijS--PxfH_u1vNM2bB3wKMR7ZWA9CIbwza5HX4Ej1mHBFR3PMDb5eoUq-FWzALnzGmKPgcbdUi8xcp7wyldho71cbghUY6bFOBwqcknoJgAiLeNEWFEeWXyk2pvxGEHYQ1ePb1yeYW3uvuHOd-BSNOwZc7AW9Qj8oISUZtPt_esjP_pbQ-7xGSt-OiSF3WD27hMVrG4Eri0x09QWpvF9bSDWT-z3dbHpp92VfwrLMOgvnSBG9VDBcO8LsSMOAAlgopT82-ZRci4-psw_3UWysrOk"}]}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:14:17] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/decrypt_request.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 14:16:10 +0000] [10] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 16
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 300
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app/src
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /var/log/rao/gu-access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /var/log/rao/gu-error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags:
+  statsd_prefix:
+  proc_name: None
+  default_proc_name: rao.wsgi
+  pythonpath: /app/src
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fab75248b80>
+  on_reload: <function OnReload.on_reload at 0x7fab75248ca0>
+  when_ready: <function WhenReady.when_ready at 0x7fab75248dc0>
+  pre_fork: <function Prefork.pre_fork at 0x7fab75248ee0>
+  post_fork: <function Postfork.post_fork at 0x7fab752ec040>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fab752ec160>
+  worker_int: <function WorkerInt.worker_int at 0x7fab752ec280>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fab752ec3a0>
+  pre_exec: <function PreExec.pre_exec at 0x7fab752ec4c0>
+  pre_request: <function PreRequest.pre_request at 0x7fab752ec5e0>
+  post_request: <function PostRequest.post_request at 0x7fab752ec670>
+  child_exit: <function ChildExit.child_exit at 0x7fab752ec790>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fab752ec8b0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fab752ec9d0>
+  on_exit: <function OnExit.on_exit at 0x7fab752ecaf0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-06-04 14:16:10 +0000] [10] [INFO] Starting gunicorn 20.0.4
+[2024-06-04 14:16:10 +0000] [10] [DEBUG] Arbiter booted
+[2024-06-04 14:16:10 +0000] [10] [INFO] Listening at: http://0.0.0.0:8000 (10)
+[2024-06-04 14:16:10 +0000] [10] [INFO] Using worker: sync
+[2024-06-04 14:16:10 +0000] [12] [INFO] Booting worker with pid: 12
+[2024-06-04 14:16:10 +0000] [13] [INFO] Booting worker with pid: 13
+[2024-06-04 14:16:11 +0000] [14] [INFO] Booting worker with pid: 14
+[2024-06-04 14:16:11 +0000] [15] [INFO] Booting worker with pid: 15
+[2024-06-04 14:16:11 +0000] [16] [INFO] Booting worker with pid: 16
+[2024-06-04 14:16:11 +0000] [17] [INFO] Booting worker with pid: 17
+[2024-06-04 14:16:11 +0000] [18] [INFO] Booting worker with pid: 18
+[2024-06-04 14:16:11 +0000] [19] [INFO] Booting worker with pid: 19
+[2024-06-04 14:16:11 +0000] [20] [INFO] Booting worker with pid: 20
+[2024-06-04 14:16:11 +0000] [21] [INFO] Booting worker with pid: 21
+[2024-06-04 14:16:11 +0000] [22] [INFO] Booting worker with pid: 22
+[2024-06-04 14:16:11 +0000] [23] [INFO] Booting worker with pid: 23
+[2024-06-04 14:16:11 +0000] [24] [INFO] Booting worker with pid: 24
+[2024-06-04 14:16:11 +0000] [25] [INFO] Booting worker with pid: 25
+[2024-06-04 14:16:11 +0000] [26] [INFO] Booting worker with pid: 26
+[2024-06-04 14:16:11 +0000] [27] [INFO] Booting worker with pid: 27
+[2024-06-04 14:16:11 +0000] [10] [DEBUG] 16 workers
+[2024-06-04 16:16:14 +0200] [21] [DEBUG] POST /upload_doc/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:16:18] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a WebcamIdentification tramite NEXT per il cittadino GHONHD18E01Z505E
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:16:18] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/pay/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:16:22] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/pay/order:
+[status code = 200
+content = {"message":"Attenzione! Ordine gi\u00e0 Pagato","status":"success"}
+]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:16:22] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/.well-known/rao-configuration/certs.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:16:22] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/.well-known/rao-configuration/certs:
+[status code = 200
+content = {"keys": [{"e": "AQAB", "kty": "RSA", "n": "p8p7IwvTtwgphraRdyLJNh9UbFCz_Td0iMiOn9YQH85AmUu3pq3NVWz2V1rHUjSgpFuLeAr4omj2AtB_2jOjkvtBGhMD7Pqf_G1dyjhDOnzBUGBbSCtkhhjPlh2oc0mX3HI5Bb7viNsel32Rjp5R5MWCGvkM0748HWnfKf9W4_xmQTHOp1Zvz2WuX_bObkwcrwaXqnyMs4wGCc1ibzKCGnRKSWP6doQIiEtoYLZrUeUMcJezMoN7vN6enHNc4vIedBdbU95hH5XSy2YtLUCHhvm_uZPOTvHZWXhD6Vw-iSRQBN8HGmoaq67dctuCvA4lwekqW1MdBKZpLgncChnUEXAkQUsklqJN0pOXdbfozgZO2xaHG9y5mfzx8OiUdkMFQquTsQ8lO3pTsYIdWgEijS--PxfH_u1vNM2bB3wKMR7ZWA9CIbwza5HX4Ej1mHBFR3PMDb5eoUq-FWzALnzGmKPgcbdUi8xcp7wyldho71cbghUY6bFOBwqcknoJgAiLeNEWFEeWXyk2pvxGEHYQ1ePb1yeYW3uvuHOd-BSNOwZc7AW9Qj8oISUZtPt_esjP_pbQ-7xGSt-OiSF3WD27hMVrG4Eri0x09QWpvF9bSDWT-z3dbHpp92VfwrLMOgvnSBG9VDBcO8LsSMOAAlgopT82-ZRci4-psw_3UWysrOk"}]}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:16:22] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/decrypt_request.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 16:16:22 +0200] [23] [DEBUG] GET /.well-known/rao-configuration/certs
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:16:27] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/decrypt_request:
+[status code = 200
+content = {"message": "Identit\u00e0 creata con successo"}]
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:16:27] INFO [next] [agency.states.UploadDoc:48] operator: DLRLSN04E29G273U, GHONHD18E01Z505E - Step3 documenti OK - Form compilato
+[2024-06-04 16:16:27 +0200] [25] [DEBUG] GET /router_view/WebcamIdentification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:16:29 +0200] [21] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:16:39 +0200] [27] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:16:52 +0200] [23] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:17:03 +0200] [23] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:17:14 +0200] [21] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:17:25 +0200] [21] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:17:36 +0200] [21] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:17:47 +0200] [21] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:17:58 +0200] [27] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:18:09 +0200] [21] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:18:20 +0200] [21] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:18:31 +0200] [21] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:18:42 +0200] [27] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:18:53 +0200] [14] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:19:06 +0200] [25] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:19:17 +0200] [27] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:19:28 +0200] [27] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:19:39 +0200] [25] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:19:50 +0200] [25] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:20:01 +0200] [26] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:20:14 +0200] [13] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:20:27 +0200] [17] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:20:40 +0200] [12] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:20:53 +0200] [17] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:21:04 +0200] [17] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:21:15 +0200] [17] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:21:26 +0200] [17] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:21:37 +0200] [17] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:21:48 +0200] [12] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:21:59 +0200] [12] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:22:10 +0200] [17] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:22:21 +0200] [17] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:22:32 +0200] [19] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:22:46 +0200] [19] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 14:23:11 +0000] [9] [DEBUG] Current configuration:
+  config: None
+  bind: ['0.0.0.0:8000']
+  backlog: 2048
+  workers: 16
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 300
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: True
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /app/src
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 0
+  group: 0
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1']
+  accesslog: /var/log/rao/gu-access.log
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /var/log/rao/gu-error.log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: False
+  statsd_host: None
+  dogstatsd_tags:
+  statsd_prefix:
+  proc_name: None
+  default_proc_name: rao.wsgi
+  pythonpath: /app/src
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb35fdd1b80>
+  on_reload: <function OnReload.on_reload at 0x7fb35fdd1ca0>
+  when_ready: <function WhenReady.when_ready at 0x7fb35fdd1dc0>
+  pre_fork: <function Prefork.pre_fork at 0x7fb35fdd1ee0>
+  post_fork: <function Postfork.post_fork at 0x7fb35fe76040>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb35fe76160>
+  worker_int: <function WorkerInt.worker_int at 0x7fb35fe76280>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb35fe763a0>
+  pre_exec: <function PreExec.pre_exec at 0x7fb35fe764c0>
+  pre_request: <function PreRequest.pre_request at 0x7fb35fe765e0>
+  post_request: <function PostRequest.post_request at 0x7fb35fe76670>
+  child_exit: <function ChildExit.child_exit at 0x7fb35fe76790>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb35fe768b0>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb35fe769d0>
+  on_exit: <function OnExit.on_exit at 0x7fb35fe76af0>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  strip_header_spaces: False
+[2024-06-04 14:23:11 +0000] [9] [INFO] Starting gunicorn 20.0.4
+[2024-06-04 14:23:11 +0000] [9] [DEBUG] Arbiter booted
+[2024-06-04 14:23:11 +0000] [9] [INFO] Listening at: http://0.0.0.0:8000 (9)
+[2024-06-04 14:23:11 +0000] [9] [INFO] Using worker: sync
+[2024-06-04 14:23:11 +0000] [11] [INFO] Booting worker with pid: 11
+[2024-06-04 14:23:11 +0000] [12] [INFO] Booting worker with pid: 12
+[2024-06-04 14:23:11 +0000] [13] [INFO] Booting worker with pid: 13
+[2024-06-04 14:23:11 +0000] [14] [INFO] Booting worker with pid: 14
+[2024-06-04 14:23:11 +0000] [15] [INFO] Booting worker with pid: 15
+[2024-06-04 14:23:11 +0000] [16] [INFO] Booting worker with pid: 16
+[2024-06-04 14:23:11 +0000] [17] [INFO] Booting worker with pid: 17
+[2024-06-04 14:23:11 +0000] [18] [INFO] Booting worker with pid: 18
+[2024-06-04 14:23:11 +0000] [19] [INFO] Booting worker with pid: 19
+[2024-06-04 14:23:11 +0000] [20] [INFO] Booting worker with pid: 20
+[2024-06-04 14:23:11 +0000] [21] [INFO] Booting worker with pid: 21
+[2024-06-04 14:23:11 +0000] [22] [INFO] Booting worker with pid: 22
+[2024-06-04 14:23:11 +0000] [23] [INFO] Booting worker with pid: 23
+[2024-06-04 14:23:12 +0000] [24] [INFO] Booting worker with pid: 24
+[2024-06-04 14:23:12 +0000] [25] [INFO] Booting worker with pid: 25
+[2024-06-04 14:23:12 +0000] [26] [INFO] Booting worker with pid: 26
+[2024-06-04 14:23:12 +0000] [9] [DEBUG] 16 workers
+[2024-06-04 16:24:32 +0200] [26] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:24:44 +0200] [26] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:24:45 +0200] [22] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:24:56 +0200] [22] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:25:01 +0200] [23] [DEBUG] GET /webcam_identification/f22e859d-9d74-42d8-aa65-8d5f432632e2/
+[2024-06-04 16:25:05 +0200] [23] [DEBUG] GET /logout/
+[2024-06-04 16:25:05 +0200] [23] [DEBUG] GET /
+[2024-06-04 16:25:15 +0200] [23] [DEBUG] GET /portal/
+[2024-06-04 16:25:15 +0200] [23] [DEBUG] GET /
+[2024-06-04 16:25:21 +0200] [23] [DEBUG] POST /
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:21] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/auth/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:21] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/auth/:
+[status code = 200
+content = {"status": true, "value": {"code": 0, "spidCode": "EHT24CBDGSWZV"}}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:21] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/attributes/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 16:25:21 +0200] [23] [DEBUG] GET /level2_token_choice/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:21] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/tokens/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:24] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/tokens/:
+[status code = 200
+content = {"status": true, "value": {"sms": "EHT24CBDGSWZV240711205"}}]
+[2024-06-04 16:25:25 +0200] [23] [DEBUG] GET /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:25] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/send/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:26] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/send/:
+[status code = 200
+content = {"status": true, "value": 93}]
+[2024-06-04 16:25:33 +0200] [24] [DEBUG] POST /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:35] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/check/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:25:37] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/check/:
+[status code = 200
+content = {"status": true, "value": true, "wrongOtp": false}]
+[2024-06-04 16:25:37 +0200] [24] [DEBUG] GET /add_identity/
+[2024-06-04 16:25:38 +0200] [24] [DEBUG] GET /router_view/DataToSend/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:25:38 +0200] [26] [DEBUG] GET /data_to_send/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:25:38] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[2024-06-04 16:25:39 +0200] [26] [DEBUG] GET /ajax/load/
+[2024-06-04 16:25:39 +0200] [17] [DEBUG] GET /ajax/load/
+[2024-06-04 16:25:51 +0200] [17] [DEBUG] GET /ajax_decode_fiscal_number/
+[2024-06-04 16:25:51 +0200] [26] [DEBUG] GET /ajax/load/
+[2024-06-04 16:25:51 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:08 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:11 +0200] [19] [DEBUG] POST /data_to_send/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:26:13] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[2024-06-04 16:26:14 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:14 +0200] [16] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:14 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:14 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:16 +0200] [26] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:16 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:16 +0200] [16] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:16 +0200] [19] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:16 +0200] [13] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:16 +0200] [19] [DEBUG] GET /ajax/load/
+[2024-06-04 16:26:18 +0200] [19] [DEBUG] POST /data_to_send/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:26:18] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:26:19] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a EmailToVerify tramite NEXT per il cittadino [CF non inizializzato]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:26:19] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/check/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:26:20] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/check/order:
+[status code = 200
+content = {"message":"Saldo Disponibile","status":"success"}
+]
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:26:20] INFO [next] [agency.states.DataToSend:50] operator: DLRLSN04E29G273U, LVRRCR06P01C244Y - Step1 identificazione OK - Form compilato
+[2024-06-04 16:26:20 +0200] [19] [DEBUG] GET /router_view/EmailToVerify/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:26:20 +0200] [19] [DEBUG] GET /verify_mail/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:26:31 +0200] [14] [DEBUG] POST /verify_mail/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:26:33] INFO [devisu_verify_mail] [agency.etnaid.EtnaIDAPI:251] Check email order@n50171.it esistente
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:26:33] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/mail.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:26:34] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/mail:
+[status code = 200
+content = {"message": "Email ok! Non appartiene a nessuna identit\u00e0"}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:26:35] INFO [send_email] [agency.utils.utils_mail:75] [['order@n50171.it']] Mail con oggetto "Codice di verifica e-mail da Dev" inviata - Connection: default
+[2024-06-04 16:26:55 +0200] [14] [DEBUG] POST /verify_mail/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:26:55] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a PhoneToVerify tramite NEXT per il cittadino LVRRCR06P01C244Y
+[2024-06-04 16:26:55 +0200] [19] [DEBUG] GET /router_view/PhoneToVerify/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:26:55 +0200] [19] [DEBUG] GET /verify_phone/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:27:00 +0200] [19] [DEBUG] POST /verify_phone/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:00] INFO [devisu_verify_phone] [agency.etnaid.EtnaIDAPI:274] Invio del OTP SMS a +39125663311
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:00] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/otp/sms.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:01] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/otp/sms:
+[status code = 200
+content = {"message": "OTP sms inviato con successo"}]
+[2024-06-04 16:27:15 +0200] [19] [DEBUG] POST /verify_phone/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:27:15] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a IdModeChoice tramite NEXT per il cittadino LVRRCR06P01C244Y
+[2024-06-04 16:27:15 +0200] [19] [DEBUG] GET /router_view/IdModeChoice/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:27:15 +0200] [19] [DEBUG] GET /id_mode_choice/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:27:16 +0200] [16] [DEBUG] POST /id_mode_choice/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:27:16] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a UploadDoc tramite NEXT per il cittadino LVRRCR06P01C244Y
+[2024-06-04 16:27:16 +0200] [18] [DEBUG] GET /router_view/UploadDoc/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:27:18 +0200] [18] [DEBUG] GET /upload_doc/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:27:45 +0200] [18] [DEBUG] POST /upload_doc/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:27:45] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a WebcamIdentification tramite NEXT per il cittadino LVRRCR06P01C244Y
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:45] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/pay/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:47] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/pay/order:
+[status code = 200
+content = {"message":"Saldo Scalato con Successo","status":"success"}
+]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:48] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/.well-known/rao-configuration/certs.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:48] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/.well-known/rao-configuration/certs:
+[status code = 200
+content = {"keys": [{"e": "AQAB", "kty": "RSA", "n": "p8p7IwvTtwgphraRdyLJNh9UbFCz_Td0iMiOn9YQH85AmUu3pq3NVWz2V1rHUjSgpFuLeAr4omj2AtB_2jOjkvtBGhMD7Pqf_G1dyjhDOnzBUGBbSCtkhhjPlh2oc0mX3HI5Bb7viNsel32Rjp5R5MWCGvkM0748HWnfKf9W4_xmQTHOp1Zvz2WuX_bObkwcrwaXqnyMs4wGCc1ibzKCGnRKSWP6doQIiEtoYLZrUeUMcJezMoN7vN6enHNc4vIedBdbU95hH5XSy2YtLUCHhvm_uZPOTvHZWXhD6Vw-iSRQBN8HGmoaq67dctuCvA4lwekqW1MdBKZpLgncChnUEXAkQUsklqJN0pOXdbfozgZO2xaHG9y5mfzx8OiUdkMFQquTsQ8lO3pTsYIdWgEijS--PxfH_u1vNM2bB3wKMR7ZWA9CIbwza5HX4Ej1mHBFR3PMDb5eoUq-FWzALnzGmKPgcbdUi8xcp7wyldho71cbghUY6bFOBwqcknoJgAiLeNEWFEeWXyk2pvxGEHYQ1ePb1yeYW3uvuHOd-BSNOwZc7AW9Qj8oISUZtPt_esjP_pbQ-7xGSt-OiSF3WD27hMVrG4Eri0x09QWpvF9bSDWT-z3dbHpp92VfwrLMOgvnSBG9VDBcO8LsSMOAAlgopT82-ZRci4-psw_3UWysrOk"}]}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:48] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/decrypt_request.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 16:27:48 +0200] [16] [DEBUG] GET /.well-known/rao-configuration/certs
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:27:50] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/decrypt_request:
+[status code = 200
+content = {"message": "Identit\u00e0 creata con successo"}]
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 16:27:50] INFO [next] [agency.states.UploadDoc:48] operator: DLRLSN04E29G273U, LVRRCR06P01C244Y - Step3 documenti OK - Form compilato
+[2024-06-04 16:27:50 +0200] [13] [DEBUG] GET /router_view/WebcamIdentification/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:27:50 +0200] [13] [DEBUG] GET /webcam_identification/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:28:01 +0200] [16] [DEBUG] GET /webcam_identification/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:28:06 +0200] [13] [DEBUG] POST /agency/api/check/practice
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:28:06] INFO [post] [agency.api.api:22] CheckPracticeViewSet: POST
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:28:06] INFO [post] [agency.api.api:23] {'uuid_identity': '48b6c88c-56d1-4316-8ed3-4208e55cee9a', 'outcome': 'OK'}
+[2024-06-04 16:28:11 +0200] [13] [DEBUG] GET /webcam_identification/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:28:11] ERROR [__check_state] [agency.states.AbstractIdentityRequest:113] Operatore: [DLRLSN04E29G273U] - Stato non valido per la richiesta 48b6c88c-56d1-4316-8ed3-4208e55cee9a. Redirezione a Completed
+[2024-06-04 16:28:12 +0200] [13] [DEBUG] GET /router_view/Completed/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[2024-06-04 16:28:12 +0200] [18] [DEBUG] GET /summary_identity/48b6c88c-56d1-4316-8ed3-4208e55cee9a/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:28:12] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/close/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:28:13] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/close/order:
+[status code = 200
+content = {"message":"Ordine Concluso con successo","status":"success"}
+]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 16:28:13] INFO [summary_identity] [agency.views:1013] Processo di identificazione completato con successo
+[2024-06-04 17:00:10 +0200] [17] [DEBUG] GET /logout/
+[2024-06-04 17:00:10 +0200] [24] [DEBUG] GET /
+[2024-06-04 17:03:19 +0200] [18] [DEBUG] GET /
+[2024-06-04 17:03:22 +0200] [24] [DEBUG] GET /
+[2024-06-04 17:03:24 +0200] [14] [DEBUG] GET /
+[2024-06-04 17:05:49 +0200] [11] [DEBUG] GET /portal/
+[2024-06-04 17:05:53 +0200] [23] [DEBUG] GET /
+[2024-06-04 17:06:05 +0200] [23] [DEBUG] POST /
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:06] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/auth/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:06] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/auth/:
+[status code = 200
+content = {"status": true, "value": {"code": 0, "spidCode": "EHT24CBDGSWZV"}}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:06] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/attributes/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 17:06:06 +0200] [23] [DEBUG] GET /level2_token_choice/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:06] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/tokens/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:09] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/tokens/:
+[status code = 200
+content = {"status": true, "value": {"sms": "EHT24CBDGSWZV240711205"}}]
+[2024-06-04 17:06:11 +0200] [23] [DEBUG] GET /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:11] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/send/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:11] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/send/:
+[status code = 200
+content = {"status": true, "value": 92}]
+[2024-06-04 17:06:41 +0200] [18] [DEBUG] POST /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:41] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/check/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:06:44] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/check/:
+[status code = 200
+content = {"status": true, "value": true, "wrongOtp": false}]
+[2024-06-04 17:06:44 +0200] [18] [DEBUG] GET /add_identity/
+[2024-06-04 17:06:44 +0200] [18] [DEBUG] GET /router_view/DataToSend/c361283c-d791-4953-b576-1fa043fd5aa0/
+[2024-06-04 17:06:44 +0200] [18] [DEBUG] GET /data_to_send/c361283c-d791-4953-b576-1fa043fd5aa0/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:06:44] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[2024-06-04 17:06:46 +0200] [18] [DEBUG] GET /ajax/load/
+[2024-06-04 17:06:46 +0200] [23] [DEBUG] GET /ajax/load/
+[2024-06-04 17:07:24 +0200] [17] [DEBUG] GET /ajax_decode_fiscal_number/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:07:24] WARNING [decode_fiscal_number] [agency.utils.utils:602] Exception: [codicefiscale] invalid syntax:
+[2024-06-04 17:07:39 +0200] [23] [DEBUG] GET /ajax_decode_fiscal_number/
+[2024-06-04 17:07:39 +0200] [26] [DEBUG] GET /ajax/load/
+[2024-06-04 17:07:39 +0200] [13] [DEBUG] GET /ajax/load/
+[2024-06-04 17:07:55 +0200] [13] [DEBUG] GET /ajax/load/
+[2024-06-04 17:07:59 +0200] [20] [DEBUG] POST /data_to_send/c361283c-d791-4953-b576-1fa043fd5aa0/
+[2024-06-04 17:08:45 +0200] [16] [DEBUG] POST /data_to_send/c361283c-d791-4953-b576-1fa043fd5aa0/
+[2024-06-04 17:10:30 +0200] [12] [DEBUG] GET /portal/
+[2024-06-04 17:10:48 +0200] [16] [ERROR] Error handling request /data_to_send/c361283c-d791-4953-b576-1fa043fd5aa0/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 269, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+psycopg2.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/deprecation.py", line 133, in __call__
+    response = self.process_request(request)
+  File "/usr/local/lib/python3.8/site-packages/django_tenants/middleware/main.py", line 44, in process_request
+    tenant = self.get_tenant(domain_model, hostname)
+  File "/usr/local/lib/python3.8/site-packages/django_tenants/middleware/main.py", line 28, in get_tenant
+    domain = domain_model.objects.select_related('tenant').get(domain=hostname)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 633, in get
+    num = len(clone)
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 380, in __len__
+    self._fetch_all()
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "/usr/local/lib/python3.8/site-packages/django/db/models/sql/compiler.py", line 1558, in execute_sql
+    cursor = self.connection.cursor()
+  File "/usr/local/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/base/base.py", line 330, in cursor
+    return self._cursor()
+  File "/usr/local/lib/python3.8/site-packages/django_tenants/postgresql_backend/base.py", line 135, in _cursor
+    cursor = super()._cursor()
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/base/base.py", line 306, in _cursor
+    self.ensure_connection()
+  File "/usr/local/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.8/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/base/base.py", line 289, in ensure_connection
+    self.connect()
+  File "/usr/local/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/base/base.py", line 270, in connect
+    self.connection = self.get_new_connection(conn_params)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/asyncio.py", line 26, in inner
+    return func(*args, **kwargs)
+  File "/usr/local/lib/python3.8/site-packages/django/db/backends/postgresql/base.py", line 269, in get_new_connection
+    connection = self.Database.connect(**conn_params)
+  File "/usr/local/lib/python3.8/site-packages/psycopg2/__init__.py", line 122, in connect
+    conn = _connect(dsn, connection_factory=connection_factory, **kwasync)
+django.db.utils.OperationalError: could not translate host name "db" to address: Temporary failure in name resolution
+
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 134, in handle
+    self.handle_request(listener, req, client, addr)
+  File "/usr/local/lib/python3.8/site-packages/gunicorn/workers/sync.py", line 175, in handle_request
+    respiter = self.wsgi(environ, resp.start_response)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/wsgi.py", line 134, in __call__
+    response = self.get_response(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/base.py", line 140, in get_response
+    response = self._middleware_chain(request)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 57, in inner
+    response = response_for_exception(request, exc)
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 140, in response_for_exception
+    response = handle_uncaught_exception(
+  File "/usr/local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 181, in handle_uncaught_exception
+    return debug.technical_500_response(request, *exc_info)
+  File "/usr/local/lib/python3.8/site-packages/django/views/debug.py", line 67, in technical_500_response
+    html = reporter.get_traceback_html()
+  File "/usr/local/lib/python3.8/site-packages/django/views/debug.py", line 410, in get_traceback_html
+    c = Context(self.get_traceback_data(), use_l10n=False)
+  File "/usr/local/lib/python3.8/site-packages/django/views/debug.py", line 393, in get_traceback_data
+    c["raising_view_name"] = get_caller(self.request)
+  File "/usr/local/lib/python3.8/site-packages/django/views/debug.py", line 100, in get_caller
+    resolver_match = resolve(request.path)
+  File "/usr/local/lib/python3.8/site-packages/django/urls/base.py", line 24, in resolve
+    return get_resolver(urlconf).resolve(path)
+  File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 663, in resolve
+    for pattern in self.url_patterns:
+  File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 715, in url_patterns
+    patterns = getattr(self.urlconf_module, "urlpatterns", self.urlconf_module)
+  File "/usr/local/lib/python3.8/site-packages/django/utils/functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "/usr/local/lib/python3.8/site-packages/django/urls/resolvers.py", line 708, in urlconf_module
+    return import_module(self.urlconf_name)
+  File "/usr/local/lib/python3.8/importlib/__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1011, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 950, in _sanity_check
+ValueError: Empty module name
+[2024-06-04 17:12:44 +0200] [14] [DEBUG] GET /portal/
+[2024-06-04 17:12:44 +0200] [16] [DEBUG] GET /
+[2024-06-04 17:12:44 +0200] [11] [DEBUG] GET /
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:12:46] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[2024-06-04 17:12:47 +0200] [20] [DEBUG] Ignoring EPIPE
+[2024-06-04 17:12:48 +0200] [22] [DEBUG] GET /
+[2024-06-04 17:12:59 +0200] [22] [DEBUG] POST /
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:12:59] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/auth/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:12:59] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/auth/:
+[status code = 200
+content = {"status": true, "value": {"code": 0, "spidCode": "EHT24CBDGSWZV"}}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:12:59] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/attributes/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 17:12:59 +0200] [20] [DEBUG] GET /level2_token_choice/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:12:59] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/tokens/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:13:02] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/tokens/:
+[status code = 200
+content = {"status": true, "value": {"sms": "EHT24CBDGSWZV240711205"}}]
+[2024-06-04 17:13:04 +0200] [20] [DEBUG] GET /level2_otp/sms/
+[2024-06-04 17:13:23 +0200] [12] [DEBUG] POST /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:13:23] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/check/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:13:24] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/check/:
+[status code = 500
+content = {"status": false, "value": "Errore generico su API PI", "wrongOtp": true}]
+[2024-06-04 17:13:28 +0200] [19] [DEBUG] POST /level2_otp/sms/
+[2024-06-04 17:13:28 +0200] [19] [DEBUG] GET /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:13:28] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/send/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:13:30] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/send/:
+[status code = 200
+content = {"status": true, "value": 91}]
+[2024-06-04 17:13:33 +0200] [22] [DEBUG] POST /level2_otp/sms/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:13:33] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [a.dilorenzo@gmail.com] - Chiamata API a https://etnaid.test-eht.eu/api/otp/check/.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:13:34] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [a.dilorenzo@gmail.com] - Risposta API da https://etnaid.test-eht.eu/api/otp/check/:
+[status code = 200
+content = {"status": true, "value": true, "wrongOtp": false}]
+[2024-06-04 17:13:34 +0200] [19] [DEBUG] GET /add_identity/
+[2024-06-04 17:13:34 +0200] [19] [DEBUG] GET /router_view/DataToSend/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:13:35 +0200] [19] [DEBUG] GET /data_to_send/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:13:35] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[2024-06-04 17:13:36 +0200] [24] [DEBUG] GET /ajax/load/
+[2024-06-04 17:13:36 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 17:13:47 +0200] [19] [DEBUG] GET /ajax_decode_fiscal_number/
+[2024-06-04 17:13:47 +0200] [24] [DEBUG] GET /ajax/load/
+[2024-06-04 17:13:47 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:02 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:05 +0200] [11] [DEBUG] POST /data_to_send/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:14:05] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[2024-06-04 17:14:06 +0200] [17] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:06 +0200] [21] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:06 +0200] [17] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:07 +0200] [17] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:08 +0200] [15] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:08 +0200] [23] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:08 +0200] [11] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:08 +0200] [16] [DEBUG] GET /ajax/load/
+[2024-06-04 17:14:12 +0200] [11] [DEBUG] POST /data_to_send/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:14:12] INFO [add_identity] [agency.views:738] Operatore: DLRLSN04E29G273U - Inizio procedura di creazione nuova identita'
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:14:13] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a EmailToVerify tramite NEXT per il cittadino [CF non inizializzato]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:14:13] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/check/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:14:14] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/check/order:
+[status code = 200
+content = {"message":"Saldo Disponibile","status":"success"}
+]
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:14:14] INFO [next] [agency.states.DataToSend:50] operator: DLRLSN04E29G273U, VNTKLE53P41I964S - Step1 identificazione OK - Form compilato
+[2024-06-04 17:14:14 +0200] [16] [DEBUG] GET /router_view/EmailToVerify/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:14:14 +0200] [16] [DEBUG] GET /verify_mail/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:14:24 +0200] [16] [DEBUG] POST /verify_mail/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:14:24] INFO [devisu_verify_mail] [agency.etnaid.EtnaIDAPI:251] Check email order@n50194.it esistente
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:14:24] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/mail.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:14:25] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/mail:
+[status code = 200
+content = {"message": "Email ok! Non appartiene a nessuna identit\u00e0"}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:14:25] INFO [send_email] [agency.utils.utils_mail:75] [['order@n50194.it']] Mail con oggetto "Codice di verifica e-mail da Dev" inviata - Connection: default
+[2024-06-04 17:14:33 +0200] [26] [DEBUG] GET /
+[2024-06-04 17:14:50 +0200] [16] [DEBUG] POST /verify_mail/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:14:50] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a PhoneToVerify tramite NEXT per il cittadino VNTKLE53P41I964S
+[2024-06-04 17:14:50 +0200] [16] [DEBUG] GET /router_view/PhoneToVerify/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:14:50 +0200] [16] [DEBUG] GET /verify_phone/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:14:59 +0200] [23] [DEBUG] POST /verify_phone/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:14:59] INFO [devisu_verify_phone] [agency.etnaid.EtnaIDAPI:274] Invio del OTP SMS a +393401923414
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:14:59] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/otp/sms.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:15:00] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/otp/sms:
+[status code = 200
+content = {"message": "OTP sms inviato con successo"}]
+[2024-06-04 17:15:07 +0200] [24] [DEBUG] POST /verify_phone/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:15:07] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a IdModeChoice tramite NEXT per il cittadino VNTKLE53P41I964S
+[2024-06-04 17:15:07 +0200] [24] [DEBUG] GET /router_view/IdModeChoice/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:15:07 +0200] [24] [DEBUG] GET /id_mode_choice/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:15:19 +0200] [24] [DEBUG] POST /id_mode_choice/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:15:19] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a UploadDoc tramite NEXT per il cittadino VNTKLE53P41I964S
+[2024-06-04 17:15:19 +0200] [24] [DEBUG] GET /router_view/UploadDoc/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:15:19 +0200] [24] [DEBUG] GET /upload_doc/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:16:12 +0200] [24] [DEBUG] POST /upload_doc/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:16:12] INFO [next] [agency.states.AbstractIdentityRequest:58] Operatore: DLRLSN04E29G273U - Transizione a WebcamIdentification tramite NEXT per il cittadino VNTKLE53P41I964S
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:16:12] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/pay/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:16:14] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/pay/order:
+[status code = 200
+content = {"message":"Saldo Scalato con Successo","status":"success"}
+]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:16:14] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/.well-known/rao-configuration/certs.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:16:14] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/.well-known/rao-configuration/certs:
+[status code = 200
+content = {"keys": [{"e": "AQAB", "kty": "RSA", "n": "p8p7IwvTtwgphraRdyLJNh9UbFCz_Td0iMiOn9YQH85AmUu3pq3NVWz2V1rHUjSgpFuLeAr4omj2AtB_2jOjkvtBGhMD7Pqf_G1dyjhDOnzBUGBbSCtkhhjPlh2oc0mX3HI5Bb7viNsel32Rjp5R5MWCGvkM0748HWnfKf9W4_xmQTHOp1Zvz2WuX_bObkwcrwaXqnyMs4wGCc1ibzKCGnRKSWP6doQIiEtoYLZrUeUMcJezMoN7vN6enHNc4vIedBdbU95hH5XSy2YtLUCHhvm_uZPOTvHZWXhD6Vw-iSRQBN8HGmoaq67dctuCvA4lwekqW1MdBKZpLgncChnUEXAkQUsklqJN0pOXdbfozgZO2xaHG9y5mfzx8OiUdkMFQquTsQ8lO3pTsYIdWgEijS--PxfH_u1vNM2bB3wKMR7ZWA9CIbwza5HX4Ej1mHBFR3PMDb5eoUq-FWzALnzGmKPgcbdUi8xcp7wyldho71cbghUY6bFOBwqcknoJgAiLeNEWFEeWXyk2pvxGEHYQ1ePb1yeYW3uvuHOd-BSNOwZc7AW9Qj8oISUZtPt_esjP_pbQ-7xGSt-OiSF3WD27hMVrG4Eri0x09QWpvF9bSDWT-z3dbHpp92VfwrLMOgvnSBG9VDBcO8LsSMOAAlgopT82-ZRci4-psw_3UWysrOk"}]}]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:16:14] INFO [__api_call] [agency.etnaid.EtnaIDAPI:305] [DLRLSN04E29G273U] - Chiamata API a https://etnaid.test-eht.eu/api/devisu/decrypt_request.
+/usr/local/lib/python3.8/site-packages/urllib3/connectionpool.py:981: InsecureRequestWarning: Unverified HTTPS request is being made to host 'etnaid.test-eht.eu'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/latest/advanced-usage.html#ssl-warnings
+  warnings.warn(
+[2024-06-04 17:16:14 +0200] [18] [DEBUG] GET /.well-known/rao-configuration/certs
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:16:17] INFO [__api_call] [agency.etnaid.EtnaIDAPI:309] [DLRLSN04E29G273U] - Risposta API da https://etnaid.test-eht.eu/api/devisu/decrypt_request:
+[status code = 200
+content = {"message": "Identit\u00e0 creata con successo"}]
+[v. 1.0.0] [10.255.254.129] [Dev] [04/Jun/24 17:16:17] INFO [next] [agency.states.UploadDoc:48] operator: DLRLSN04E29G273U, VNTKLE53P41I964S - Step3 documenti OK - Form compilato
+[2024-06-04 17:16:17 +0200] [19] [DEBUG] GET /router_view/WebcamIdentification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:16:17 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:16:27 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:16:37 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:16:47 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:16:58 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:17:08 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:17:18 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:17:28 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:17:38 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:17:48 +0200] [19] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:17:58 +0200] [24] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:18:09 +0200] [24] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:18:15 +0200] [11] [DEBUG] POST /agency/api/check/practice
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:18:15] INFO [post] [agency.api.api:22] CheckPracticeViewSet: POST
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:18:15] INFO [post] [agency.api.api:23] {'uuid_identity': 'f22e859d-9d74-42d8-aa65-8d5f432632e2', 'outcome': 'OK'}
+[2024-06-04 17:18:19 +0200] [24] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:18:29 +0200] [24] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:18:39 +0200] [24] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:18:40 +0200] [11] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:18:45 +0200] [22] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:18:55 +0200] [11] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:19:05 +0200] [11] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:19:16 +0200] [22] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:19:26 +0200] [11] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:19:36 +0200] [25] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:19:48 +0200] [11] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:19:58 +0200] [11] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:20:08 +0200] [25] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:20:18 +0200] [11] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:20:25 +0200] [11] [DEBUG] GET /summary_identity/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:20:25] ERROR [__check_state] [agency.states.AbstractIdentityRequest:113] Operatore: [DLRLSN04E29G273U] - Stato non valido per la richiesta 94974d14-76d7-4feb-9cbb-25de759b113d. Redirezione a WebcamIdentification
+[2024-06-04 17:20:25 +0200] [25] [DEBUG] GET /router_view/WebcamIdentification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:20:25 +0200] [25] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:20:35 +0200] [25] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:20:45 +0200] [25] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:20:46 +0200] [25] [DEBUG] POST /agency/api/check/practice
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:20:46] INFO [post] [agency.api.api:22] CheckPracticeViewSet: POST
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:20:46] INFO [post] [agency.api.api:23] {'uuid_identity': '94974d14-76d7-4feb-9cbb-25de759b113d', 'outcome': 'OK'}
+[2024-06-04 17:20:56 +0200] [22] [DEBUG] GET /webcam_identification/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:20:56] ERROR [__check_state] [agency.states.AbstractIdentityRequest:113] Operatore: [DLRLSN04E29G273U] - Stato non valido per la richiesta 94974d14-76d7-4feb-9cbb-25de759b113d. Redirezione a Completed
+[2024-06-04 17:20:56 +0200] [22] [DEBUG] GET /router_view/Completed/94974d14-76d7-4feb-9cbb-25de759b113d/
+[2024-06-04 17:20:56 +0200] [22] [DEBUG] GET /summary_identity/94974d14-76d7-4feb-9cbb-25de759b113d/
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:20:56] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:98] [DLRLSN04E29G273U] - Chiamata API a http://trustnetwork-gateway:5000/close/order.
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:20:57] INFO [__api_call] [agency.trust_network_gateway.trust_network_gateway_API:101] [DLRLSN04E29G273U] - Risposta API da http://trustnetwork-gateway:5000/close/order:
+[status code = 200
+content = {"message":"Ordine Concluso con successo","status":"success"}
+]
+[v. 1.0.0] [N.D.] [Dev] [04/Jun/24 17:20:57] INFO [summary_identity] [agency.views:1013] Processo di identificazione completato con successo
+[2024-06-05 09:08:21 +0200] [21] [DEBUG] GET /
+[2024-06-05 09:46:57 +0200] [23] [DEBUG] GET /
+[2024-06-05 09:48:45 +0200] [22] [DEBUG] GET /
+[2024-06-05 09:48:59 +0200] [11] [DEBUG] GET /
+[2024-06-05 09:50:55 +0200] [18] [DEBUG] GET /
+[2024-06-05 09:50:57 +0200] [12] [DEBUG] POST /
+[2024-06-05 09:56:12 +0200] [11] [DEBUG] GET /
+[2024-06-05 10:00:30 +0200] [11] [DEBUG] GET /
+[2024-06-05 10:01:08 +0200] [16] [DEBUG] GET /
+[2024-06-05 10:01:11 +0200] [11] [DEBUG] GET /
+[2024-06-05 10:01:28 +0200] [11] [DEBUG] GET /
+[2024-06-05 10:01:30 +0200] [11] [DEBUG] POST /
+[2024-06-05 10:01:36 +0200] [22] [DEBUG] GET /
+[2024-06-05 10:01:39 +0200] [24] [DEBUG] GET /
+[2024-06-05 10:06:21 +0200] [16] [DEBUG] GET /
+[2024-06-05 10:06:34 +0200] [14] [DEBUG] GET /
+[2024-06-05 10:18:18 +0200] [19] [DEBUG] GET /
+[2024-06-05 10:34:36 +0200] [24] [DEBUG] GET /
+[2024-06-05 10:39:36 +0200] [22] [DEBUG] GET /
+[2024-06-05 10:42:05 +0200] [12] [DEBUG] GET /
+[2024-06-05 10:49:34 +0200] [18] [DEBUG] GET /
+[2024-06-05 10:49:36 +0200] [16] [DEBUG] GET /
+[2024-06-05 10:49:39 +0200] [24] [DEBUG] GET /
+[2024-06-05 10:49:41 +0200] [24] [DEBUG] GET /
+[2024-06-05 10:49:42 +0200] [25] [DEBUG] GET /
+[2024-06-05 10:49:43 +0200] [22] [DEBUG] GET /
+[2024-06-05 10:52:56 +0200] [22] [DEBUG] GET /
+[2024-06-05 10:52:59 +0200] [22] [DEBUG] GET /
+[2024-06-05 10:53:01 +0200] [25] [DEBUG] GET /
+[2024-06-05 10:53:02 +0200] [22] [DEBUG] GET /
+[2024-06-05 10:54:54 +0200] [17] [DEBUG] GET /
+[2024-06-05 10:54:55 +0200] [22] [DEBUG] GET /
+[2024-06-05 10:54:57 +0200] [22] [DEBUG] GET /
+[2024-06-05 10:54:58 +0200] [17] [DEBUG] GET /
+[2024-06-05 10:54:59 +0200] [17] [DEBUG] GET /
+[2024-06-05 10:55:00 +0200] [22] [DEBUG] GET /
+[2024-06-05 11:00:46 +0200] [11] [DEBUG] GET /
+[2024-06-05 11:00:52 +0200] [11] [DEBUG] GET /
+[2024-06-05 11:00:54 +0200] [11] [DEBUG] GET /
+[2024-06-05 11:00:55 +0200] [11] [DEBUG] GET /
+[2024-06-05 11:00:56 +0200] [11] [DEBUG] GET /
+[2024-06-05 11:00:57 +0200] [11] [DEBUG] GET /
+[2024-06-05 11:01:04 +0200] [11] [DEBUG] GET /
+[2024-06-05 11:01:42 +0200] [23] [DEBUG] GET /
+[2024-06-05 11:01:44 +0200] [25] [DEBUG] GET /
