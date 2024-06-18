@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>File Viewer</title>
+    <style>
+        body {
+            display: flex;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .file-list {
+            width: 25%;
+            padding: 10px;
+            border-right: 1px solid #ccc;
+            overflow-y: auto;
+            height: 100vh;
+        }
+
+        .file-content {
+            width: 75%;
+            padding: 10px;
+            overflow-y: auto;
+            height: 100vh;
+        }
+
+        .file-item {
+            cursor: pointer;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        a {
+            cursor: pointer;
+            padding: 5px;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .file-item:hover {
+            background-color: #f0f0f0;
+        }
+
+        h3 {
+            margin-top: 0;
+        }
+
+        textarea {
+            width: 100%;
+            height: 90vh;
+            {#padding: 0px;#}
+            font-family: monospace;
+            font-size: 14px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: none;
+        }
+
+        pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+    </style>
+</head>
+<body>
+<div class="file-list">
+    <h3>Files</h3>
+    <div id="files">
+        {% for file in files %}
+            <a class="file-item" href="?file_name={{ file }}">{{ file }}</a><br>
+            <hr>
+        {% endfor %}
+        <!-- File items will be dynamically inserted here -->
+    </div>
+</div>
+<div class="file-content">
+    <div class="file-content">
+        <h3>File Content</h3>
+        <label for="fileContent"></label><textarea id="fileContent" readonly>{% if content %}{{ content }}{% endif %}</textarea>
+    </div>
+</div>
+{##}
+{#<script>#}
+{#    document.addEventListener('DOMContentLoaded', () => {#}
+{#        fetch('/files')#}
+{#            .then(response => response.json())#}
+{#            .then(files => {#}
+{#                const filesContainer = document.getElementById('files');#}
+{#                files.forEach(file => {#}
+{#                    const fileItem = document.createElement('div');#}
+{#                    fileItem.textContent = file;#}
+{#                    fileItem.classList.add('file-item');#}
+{#                    fileItem.onclick = () => loadFileContent(file);#}
+{#                    filesContainer.appendChild(fileItem);#}
+{#                });#}
+{#            })#}
+{#            .catch(error => console.error('Error fetching files:', error));#}
+{#    });#}
+{##}
+{#    function loadFileContent(filename) {#}
+{#        fetch('/read_file', {#}
+{#            method: 'POST',#}
+{#            headers: {#}
+{#                'Content-Type': 'application/json'#}
+{#            },#}
+{#            body: JSON.stringify({filename: filename})#}
+{#        })#}
+{#            .then(response => response.json())#}
+{#            .then(data => {#}
+{#                if (data.error) {#}
+{#                    alert(data.error);#}
+{#                } else {#}
+{#                    document.getElementById('fileContent').textContent = data.content;#}
+{#                }#}
+{#            })#}
+{#            .catch(error => {#}
+{#                console.error('Error fetching file content:', error);#}
+{#            });#}
+{#    }#}
+{#</script>#}
+</body>
+</html>
