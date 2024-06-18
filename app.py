@@ -1,9 +1,9 @@
 from flask import Flask, jsonify, request, render_template
 import os
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 
 app = Flask(__name__)
-load_dotenv()
+# load_dotenv()
 # Percorso alla directory principale dei file
 files_directory = os.environ.get('FILES_DIRECTORY')
 
