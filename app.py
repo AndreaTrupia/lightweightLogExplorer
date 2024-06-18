@@ -1,10 +1,11 @@
 from flask import Flask, jsonify, request, render_template
 import os
+from dotenv import load_dotenv
 
 app = Flask(__name__)
-
+load_dotenv()
 # Percorso alla directory principale dei file
-files_directory = os.path.join(os.getcwd(), 'observed')
+files_directory = os.environ.get('FILES_DIRECTORY')
 
 def list_files_recursive(directory):
     files_list = []
